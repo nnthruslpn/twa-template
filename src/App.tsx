@@ -1,7 +1,7 @@
 import "./App.css";
 import { TonConnectButton } from "@tonconnect/ui-react";
-import { Counter } from "./components/Counter";
-import { Jetton } from "./components/Jetton";
+//import { Counter } from "./components/Counter";
+//import { Jetton } from "./components/Jetton";
 import { TransferTon } from "./components/TransferTon";
 import styled from "styled-components";
 import { Button, FlexBoxCol, FlexBoxRow } from "./components/styled/styled";
@@ -31,8 +31,9 @@ const StyledApp = styled.div`
 `;
 
 const AppContainer = styled.div`
-  max-width: 85%; 
-  margin: 0 auto;
+    max-width: 85%;
+    margin: 0 auto;  /* Change to: */
+    margin-left: auto;
 `;
 
 function App() {
@@ -52,9 +53,9 @@ function App() {
                 : "N/A"}
             </Button>
           </FlexBoxRow>
-          <Counter />
+          
           <TransferTon />
-          <Jetton />
+          
         </FlexBoxCol>
       </AppContainer>
     </StyledApp>
