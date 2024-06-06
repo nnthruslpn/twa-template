@@ -18,14 +18,9 @@ export default class Counter implements Contract {
 
   async sendDeploy(provider: ContractProvider, via: Sender) {
     await provider.internal(via, {
-      value: "0.01", // send 0.01 TON to contract for rent
-      bounce: false,
+      value: "0.01",
+      bounce: true, // Ensure TON stays on failure
     });
-  }
-
-  async getCounter(provider: ContractProvider) {
-    const { stack } = await provider.get("counter", []);
-    return stack.readBigNumber();
   }
 
   async sendIncrement(provider: ContractProvider, via: Sender) {
@@ -34,8 +29,9 @@ export default class Counter implements Contract {
       .storeUint(0, 64) // query id
       .endCell();
     await provider.internal(via, {
-      value: "0.002", // send 0.002 TON for gas
+      value: "0.002",
       body: messageBody,
+      bounce: true, // Ensure TON stays on failure
     });
   }
 
