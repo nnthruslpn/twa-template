@@ -1186,17 +1186,12 @@ Values:
     border: 1px solid #fefefe;
   }
 `;function pce(){const{connected:e}=Au(),{value:t,address:r,sendIncrement:n}=cfe();return _i("div",{className:"Container",children:[Xt(_B,{}),Xt(g8,{children:_i(sg,{children:[Xt("h3",{children:"Counter"}),_i(fu,{children:[Xt("b",{children:"Address"}),Xt(eL,{children:r})]}),_i(fu,{children:[Xt("b",{children:"Value"}),Xt("div",{children:t??"Loading..."})]}),Xt(ug,{disabled:!e,className:`Button ${e?"Active":"Disabled"}`,onClick:()=>{n()},children:"Increment"})]})})]})}class vce{constructor(t,r){this.address=t,this.init=r}async sendMintFromFaucet(t,r,n){const f=nr.beginCell().storeUint(21,32).storeUint(0,64).storeAddress(n).storeCoins(nr.toNano("0.02")).storeRef(nr.beginCell().storeUint(395134233,32).storeUint(0,64).storeCoins(nr.toNano(150)).storeAddress(null).storeAddress(n).storeCoins(nr.toNano("0.001")).storeBit(!1).endCell()).endCell();await t.internal(r,{value:nr.toNano("0.05"),body:f})}async getWalletAddress(t,r){const{stack:n}=await t.get("get_wallet_address",[{type:"slice",cell:nr.beginCell().storeAddress(r).endCell()}]);return n.readAddress().toString()}}class gce{constructor(t,r){this.address=t,this.init=r}async getBalance(t){const{stack:r}=await t.get("get_wallet_data",[]);return qc.fromNano(r.readBigNumber())}}function mce(){const{wallet:e,sender:t}=Au(),{client:r}=j$(),n=b1(async()=>{if(!r||!e)return;const h=new vce(nr.Address.parse("EQB8StgTQXidy32a8xfu7j4HMoWYV0b0cFM8nXsP2cza_b7Y"));return r.open(h)},[r,e]),o=b1(async()=>{if(!n||!r)return;const h=await n.getWalletAddress(nr.Address.parse(e));return r.open(new gce(nr.Address.parse(h)))},[n,r]),{data:i,isFetching:f}=xE(["jetton"],async()=>o?(await o.getBalance()).toString():null,{refetchInterval:3e3});return{mint:()=>{n==null||n.sendMintFromFaucet(t,nr.Address.parse(e))},jettonWalletAddress:o==null?void 0:o.address.toString(),balance:f?null:i}}function yce(){const{connected:e}=Au(),{mint:t,jettonWalletAddress:r,balance:n}=mce();return Xt(g8,{title:"Jetton",children:_i(sg,{children:[Xt("h3",{children:"Faucet Jetton"}),_i(fu,{children:["Wallet",Xt(eL,{children:r})]}),_i(fu,{children:["Balance",Xt("div",{children:n??"Loading..."})]}),Xt(ug,{disabled:!e,onClick:async()=>{t()},children:"Get jettons from faucet"})]})})}function bce(){const{sender:e,connected:t}=Au(),[r,n]=zt.useState("0.01"),[o,i]=zt.useState("EQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAM9c");return Xt(g8,{children:_i(sg,{children:[Xt("h3",{children:"Transfer TON"}),_i(fu,{children:[Xt("label",{children:"Amount "}),Xt(tC,{style:{marginRight:8},type:"number",value:r,onChange:f=>n(f.target.value)})]}),_i(fu,{children:[Xt("label",{children:"To "}),Xt(tC,{style:{marginRight:8},value:o,onChange:f=>i(f.target.value)})]}),Xt(ug,{disabled:!t,style:{marginTop:18},onClick:async()=>{e.send({to:qc.Address.parse(o),value:qc.toNano(r)})},children:"Transfer"})]})})}const wce=as.div`
-  /* Set background color */
-  background-color: #e8e8e8;
-  color: black;
+ 
 
-  /* Dark mode support */
-  @media (prefers-color-scheme: dark) {
     background-color: #222;
     color: white;
-  }
 
-  /* Make the container full screen */
+ 
   position: fixed;
   top: 0;
   left: 0;
@@ -1205,7 +1200,6 @@ Values:
   padding: 20px 20px;
   overflow: hidden;
 `,xce=as.div`
-  /* Adjust AppContainer styles */
-  max-width: 90%; /* Reduce the maximum width to 90% of the viewport */
+  max-width: 70%; 
   margin: 0 auto;
 `;function Mce(){const{network:e}=Au();return Xt(wce,{children:Xt(xce,{children:_i(sg,{children:[_i(fu,{children:[Xt(_B,{}),Xt(ug,{children:e?e===$s.MAINNET?"mainnet":"testnet":"N/A"})]}),Xt(pce,{}),Xt(bce,{}),Xt(yce,{})]})})})}const _ce="https://raw.githubusercontent.com/ton-community/tutorials/main/03-client/test/public/tonconnect-manifest.json",Sce=new DL({defaultOptions:{queries:{refetchOnWindowFocus:!1}}});y4.createRoot(document.getElementById("root")).render(Xt(UZ,{manifestUrl:_ce,children:Xt(iD,{client:Sce,children:Xt(Mce,{})})}));
