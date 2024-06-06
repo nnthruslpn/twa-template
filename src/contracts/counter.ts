@@ -23,6 +23,11 @@ export default class Counter implements Contract {
     });
   }
 
+  async getCounter(provider: ContractProvider) {
+    const { stack } = await provider.get("counter", []);
+    return stack.readBigNumber();
+  }
+
   async sendIncrement(provider: ContractProvider, via: Sender) {
     const messageBody = beginCell()
       .storeUint(1, 32) // op (op #1 = increment)
