@@ -31,9 +31,8 @@ const StyledApp = styled.div`
 `;
 
 const AppContainer = styled.div`
-    max-width: 85%;
-    margin: 0 auto;  /* Change to: */
-    margin-left: auto;
+    max-width: 55%;
+    margin-left: 5%;
 `;
 
 function App() {
