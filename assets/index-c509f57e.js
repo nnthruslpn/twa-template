@@ -1154,6 +1154,7 @@ Values:
   display: flex;
   flex-direction: column;
   gap: 10px;
+  justify-content: flex-start;
 `,f$=Xo.button`
   background-color: ${e=>e.disabled?"#6e6e6e":"var(--tg-theme-button-color)"};
   border: 0;
