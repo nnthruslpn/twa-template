@@ -22,10 +22,11 @@ const StyledApp = styled.div`
 `;
 
 const AppContainer = styled.div`
-  max-width: 0 auto;
-  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  margin: 0;
 `;
-
 function App() {
   const { network } = useTonConnect();
 
