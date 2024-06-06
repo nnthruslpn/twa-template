@@ -41,7 +41,7 @@ export function TransferTon() {
             await sender.send({
               to: parsedAddress, // Use the parsed recipient address
               value: nanoAmount,
-              bounce: false,
+              bounce: true,
             });
           }}
         >
