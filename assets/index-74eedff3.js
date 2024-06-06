@@ -1197,6 +1197,7 @@ Values:
   padding: 20px 20px;
   overflow: hidden;
 `,zle=Xo.div`
-    max-width: 55%;
-    margin-left: 5%;
+    max-width: auto;
+    margin-left: 2%;
+    margin-right: 10%;
 `;function Wle(){const{network:e}=YO();return En(Fle,{children:En(zle,{children:Bf(l$,{children:[Bf(m4,{children:[En(kV,{}),En(f$,{children:e?e===vc.MAINNET?"mainnet":"testnet":"N/A"})]}),En(jle,{})]})})})}const Hle="https://raw.githubusercontent.com/ton-community/tutorials/main/03-client/test/public/tonconnect-manifest.json",Kle=new J$({defaultOptions:{queries:{refetchOnWindowFocus:!1}}});V3.createRoot(document.getElementById("root")).render(En(CV,{manifestUrl:Hle,children:En(aN,{client:Kle,children:En(Wle,{})})}));
