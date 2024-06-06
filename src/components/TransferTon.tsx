@@ -24,21 +24,22 @@ export function TransferTon() {
           ></Input>
         </FlexBoxRow>
         <FlexBoxRow>
-  <label>To </label>
-  <Input
-    style={{ marginRight: 8 }}
-    value={recipientAddress}
-    onChange={(e) => setRecipientAddress(e.target.value)}
-  />
-</FlexBoxRow>
+          <label>To </label>
+          <Input
+            style={{ marginRight: 8 }}
+            value={recipientAddress}
+            onChange={(e) => setRecipientAddress(e.target.value)}
+          />
+        </FlexBoxRow>
         <Button
           disabled={!connected}
           style={{ marginTop: 18 }}
           onClick={async () => {
             const parsedAddress = Address.parse(recipientAddress);
             const nanoAmount = toNano(tonAmount);
-            sender.send({
-              to: parsedAddress,
+            // Specify the recipient's address here:
+            await sender.send({
+              to: parsedAddress, // Use the parsed recipient address
               value: nanoAmount,
             });
           }}
