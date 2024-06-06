@@ -10,17 +10,12 @@ import { CHAIN } from "@tonconnect/protocol";
 import "@twa-dev/sdk";
 
 const StyledApp = styled.div`
-  /* Set background color */
-  background-color: #e8e8e8;
-  color: black;
+ 
 
-  /* Dark mode support */
-  @media (prefers-color-scheme: dark) {
     background-color: #222;
     color: white;
-  }
 
-  /* Make the container full screen */
+ 
   position: fixed;
   top: 0;
   left: 0;
@@ -31,8 +26,7 @@ const StyledApp = styled.div`
 `;
 
 const AppContainer = styled.div`
-  /* Adjust AppContainer styles */
-  max-width: 90%; /* Reduce the maximum width to 90% of the viewport */
+  max-width: 70%; 
   margin: 0 auto;
 `;
 
