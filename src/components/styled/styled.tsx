@@ -52,3 +52,16 @@ export const Input = styled("input")`
     border: 1px solid #fefefe;
   }
 `;
+const CardContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  margin: 10px;
+
+  @media (max-width: 768px) {
+    flex-direction: row;
+  }
+`;
