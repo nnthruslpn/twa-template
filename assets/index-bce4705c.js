@@ -1185,14 +1185,14 @@ PERFORMANCE OF THIS SOFTWARE.
     gap: 16px;
   }
 
- .grid > div {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background-color: #fff;
-    border-radius: 10px;
-    padding: 16px;
-  }
+.grid > div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #fff;
+  border-radius: 10px;
+  padding: 16px 24px; /* изменено */
+}
 
  .grid img {
     width: 100%;
@@ -1227,12 +1227,11 @@ PERFORMANCE OF THIS SOFTWARE.
     background-color: #6c2277; /* темнее фиолетовый цвет при наведении */
   }
 
-  @media (max-width: 768px) {
-   .grid {
-      grid-template-columns: repeat(3, minmax(120px, 1fr));
-      gap: 24px;
-    }
+ @media (max-width: 768px) {
+ .grid > div {
+    padding: 16px 24px;
   }
+}
 `;function fI(){const[e]=n2(),t=iT();return{sender:{send:async n=>{var a;e.sendTransaction({messages:[{address:n.to.toString(),amount:n.value.toString(),payload:(a=n.body)==null?void 0:a.toBoc().toString("base64")}],validUntil:Date.now()+5*60*1e3})}},connected:!!(t!=null&&t.account.address),wallet:(t==null?void 0:t.account.address)??null,network:(t==null?void 0:t.account.chain)??null}}const lI=()=>gn("div",{className:"grid grid-cols-3 gap-4",children:[{id:5983,src:"https://art.kartinkof.club/uploads/posts/2023-07/1689110576_art-kartinkof-club-p-idei-dlya-srisovki-neiron-28.jpg"},{id:8620,src:"https://art.kartinkof.club/uploads/posts/2023-07/1689110576_art-kartinkof-club-p-idei-dlya-srisovki-neiron-28.jpg"},{id:7169,src:"https://art.kartinkof.club/uploads/posts/2023-07/1689110576_art-kartinkof-club-p-idei-dlya-srisovki-neiron-28.jpg"},{id:4974,src:"https://art.kartinkof.club/uploads/posts/2023-07/1689110576_art-kartinkof-club-p-idei-dlya-srisovki-neiron-28.jpg"},{id:1069,src:"https://art.kartinkof.club/uploads/posts/2023-07/1689110576_art-kartinkof-club-p-idei-dlya-srisovki-neiron-28.jpg"},{id:299,src:"https://art.kartinkof.club/uploads/posts/2023-07/1689110576_art-kartinkof-club-p-idei-dlya-srisovki-neiron-28.jpg"},{id:2666,src:"https://art.kartinkof.club/uploads/posts/2023-07/1689110576_art-kartinkof-club-p-idei-dlya-srisovki-neiron-28.jpg"},{id:5155,src:"https://art.kartinkof.club/uploads/posts/2023-07/1689110576_art-kartinkof-club-p-idei-dlya-srisovki-neiron-28.jpg"},{id:9871,src:"https://art.kartinkof.club/uploads/posts/2023-07/1689110576_art-kartinkof-club-p-idei-dlya-srisovki-neiron-28.jpg"},{id:7084,src:"https://art.kartinkof.club/uploads/posts/2023-07/1689110576_art-kartinkof-club-p-idei-dlya-srisovki-neiron-28.jpg"}].map(t=>rs("div",{className:"bg-gray-200 rounded-lg p-4",children:[gn("img",{src:t.src,alt:`Image ${t.id}`,className:"w-full h-auto rounded-lg"}),rs("div",{className:"mt-2 text-center",children:[rs("p",{children:["NO. ",t.id]}),gn("button",{className:"buy-button",children:"Купить"})," "]})]},t.id))}),uI=so.div`
 
   
