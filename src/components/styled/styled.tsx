@@ -71,7 +71,7 @@ export const GlobalStyle = createGlobalStyle`
  .grid {
     display: grid;
     grid-template-columns: repeat(5, minmax(120px, 1fr));
-    gap: 12px;
+    gap: 15px;
   }
 
  .grid > div {
@@ -93,9 +93,9 @@ export const GlobalStyle = createGlobalStyle`
   }
 
  .grid p {
-    font-size: 16px;
-    margin-bottom: 8px;
-    color: #00000;
+  font-size: 0.8em; /* текст будет иметь размер 0.8em от родительского элемента */
+  margin-bottom: 0.5em;
+  color: #000;
   }
 
  .grid.font-bold {
@@ -122,7 +122,7 @@ export const GlobalStyle = createGlobalStyle`
   @media (max-width: 768px) {
    .grid {
       grid-template-columns: repeat(3, minmax(100px, 1fr));
-      gap: 10px; /* reduce gap */
+      gap: 13px; /* reduce gap */
     }
    .grid > div {
       padding: 8px; /* reduce padding */
@@ -130,6 +130,9 @@ export const GlobalStyle = createGlobalStyle`
    .buy-button {
       padding: 8px 16px; /* reduce padding */
       font-size: 14px; /* reduce font size */
+    }
+      .grid p {
+    font-size: 0.6em; /* уменьшаем размер текста на smaller screens */
     }
   }
 `;
