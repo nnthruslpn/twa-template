@@ -1,15 +1,7 @@
 import styled from "styled-components";
 import { createGlobalStyle } from 'styled-components';
 
-export const Card = styled.div`
-  padding: 18px 20px;
-  border-radius: 8px;
-  background-color: white;
 
-  @media (prefers-color-scheme: dark) {
-    background-color: #111;
-  }
-`;
 
 export const FlexBoxRow = styled.div`
   display: flex;
@@ -121,6 +113,27 @@ export const GlobalStyle = createGlobalStyle`
       grid-template-columns: repeat(3, minmax(100px, 1fr));
       gap: 15px;
     }
+      .grid > div {
+    padding: 16px 24px;
+  }
+  .grid img {
+  max-width: 100%; /* ограничить ширину картинки */
+  height: auto; /* автоматически изменять высоту картинки */
+}
+ .grid p {
+    font-size: 14px; /* уменьшить размер шрифта */
+    display: block; /* отобразить подпись как блок */
+  }
+  .buy-button {
+    padding: 8px 16px; /* уменьшить padding кнопки */
+    font-size: 14px; /* уменьшить размер шрифта кнопки */
+  }
+    @media (prefers-color-scheme: dark) {
+ .grid p {
+    color: #FFFFFF; /* белый текст */
+    color: var(--tg-theme-text-color); /* использовать цвет текста из темы Telegram */
+  }
+}
   }
 `;
 
