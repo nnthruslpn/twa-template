@@ -74,14 +74,14 @@ export const GlobalStyle = createGlobalStyle`
     gap: 16px;
   }
 
- .grid > div {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background-color: #fff;
-    border-radius: 10px;
-    padding: 16px;
-  }
+.grid > div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #fff;
+  border-radius: 10px;
+  padding: 16px 24px; /* изменено */
+}
 
  .grid img {
     width: 100%;
@@ -116,12 +116,11 @@ export const GlobalStyle = createGlobalStyle`
     background-color: #6c2277; /* темнее фиолетовый цвет при наведении */
   }
 
-  @media (max-width: 768px) {
-   .grid {
-      grid-template-columns: repeat(3, minmax(120px, 1fr));
-      gap: 24px;
-    }
+ @media (max-width: 768px) {
+ .grid > div {
+    padding: 16px 24px;
   }
+}
 `;
 
 
