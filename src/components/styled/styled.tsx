@@ -65,3 +65,16 @@ const CardContainer = styled.div`
     flex-direction: row;
   }
 `;
+interface ImageProps {
+  src: string;
+  alt: string;
+}
+
+const Image = styled.img<ImageProps>`
+  width: 200px;
+  height: 200px;
+  border-radius: 10px;
+  margin: 10px;
+`;
+
+export default Image;

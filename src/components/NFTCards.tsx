@@ -1,46 +1,45 @@
 import React from 'react';
-import styled from 'styled-components';
+import  Image  from './styled/styled';
 
-interface CardProps {
-  rank: number;
-  tokenId: number;
+interface NFT {
+  id: number;
+  name: string;
+  image: string;
+  description: string;
 }
 
-const Card: React.FC<CardProps> = ({ rank, tokenId }) => {
+const NFTCollection: React.FC = () => {
+  const nfts: NFT[] = [
+    {
+      id: 1,
+      name: 'NFT 1',
+      image: 'https://i.pinimg.com/originals/0e/02/25/0e0225da271d1600426fa946d2b2cf27.jpg',
+      description: 'This is NFT 1',
+    },
+    {
+      id: 2,
+      name: 'NFT 2',
+      image: 'https://art.kartinkof.club/uploads/posts/2023-07/1689110576_art-kartinkof-club-p-idei-dlya-srisovki-neiron-28.jpg',
+      description: 'This is NFT 2',
+    },
+    // Add more NFTs to the array
+  ];
+
   return (
-    <CardContainer>
-      <Rank>{rank}</Rank>
-      <TokenId>{tokenId}</TokenId>
-      <Image src={`https://example.com/images/turtles/${tokenId}.png`} alt={`Turtle #${tokenId}`} />
-    </CardContainer>
+    <div>
+      <h2>NFT Collection</h2>
+      <ul>
+        {nfts.map((nft) => (
+          <li key={nft.id}>
+            <Image src={nft.image} alt={nft.name} />
+            <h3>{nft.name}</h3>
+            <p>{nft.description}</p>
+          </li>
+        ))}
+      </ul>
+    </div>
   );
 };
 
-const CardContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 20px;
-  border: 1px solid #ccc;
-  border-radius: 10px;
-  margin: 10px;
-`;
 
-const Rank = styled.div`
-  font-size: 24px;
-  font-weight: bold;
-  margin-bottom: 10px;
-`;
-
-const TokenId = styled.div`
-  font-size: 16px;
-  margin-bottom: 10px;
-`;
-
-const Image = styled.img`
-  width: 100%;
-  height: auto;
-  max-width: 300px;
-`;
-
-export default Card;
+export default NFTCollection;

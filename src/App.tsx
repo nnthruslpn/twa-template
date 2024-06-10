@@ -9,6 +9,7 @@ import { Button, FlexBoxCol, FlexBoxRow } from "./components/styled/styled";
 import { useTonConnect } from "./hooks/useTonConnect";
 import { CHAIN } from "@tonconnect/protocol";
 import "@twa-dev/sdk";
+import NFTCollection from "./components/NFTCards";
 const StyledApp = styled.div`
   
   background-color: #e8e8e8;
@@ -53,12 +54,8 @@ function App() {
                 : "N/A"}
             </Button>
           </FlexBoxRow>
-          <TransferTon />
-          <div>
-      <Card rank={1} tokenId={1} />
-      <Card rank={2} tokenId={2} />
-      <Card rank={3} tokenId={3} />
-    </div>
+          <NFTCollection />
+         
         </FlexBoxCol>
       </AppContainer>
     </StyledApp>
