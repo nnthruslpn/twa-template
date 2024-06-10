@@ -68,13 +68,13 @@ export const GlobalStyle = createGlobalStyle`
   }
 
   /* Стили для ImageGrid */
-.grid {
+ .grid {
     display: grid;
-    grid-template-columns: repeat(5, 1fr);
+    grid-template-columns: repeat(5, minmax(120px, 1fr));
     gap: 16px;
   }
 
-.grid > div {
+ .grid > div {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -83,21 +83,24 @@ export const GlobalStyle = createGlobalStyle`
     padding: 16px;
   }
 
-.grid img {
+ .grid img {
     width: 100%;
     height: auto;
     border-radius: 10px;
+    max-width: 100%;
+    object-fit: cover;
   }
 
-.grid p {
+ .grid p {
     font-size: 16px;
     margin-bottom: 8px;
   }
 
-.grid.font-bold {
+ .grid.font-bold {
     font-weight: bold;
   }
-   .buy-button {
+
+ .buy-button {
     display: block;
     margin: 0 auto;
     background-color: #7A288A; /* фиолетовый цвет */
@@ -109,8 +112,15 @@ export const GlobalStyle = createGlobalStyle`
     cursor: pointer;
   }
 
-.buy-button:hover {
+ .buy-button:hover {
     background-color: #6c2277; /* темнее фиолетовый цвет при наведении */
+  }
+
+  @media (max-width: 768px) {
+   .grid {
+      grid-template-columns: repeat(3, minmax(120px, 1fr));
+      gap: 24px;
+    }
   }
 `;
 
