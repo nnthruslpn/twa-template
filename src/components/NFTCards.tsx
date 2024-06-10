@@ -1,45 +1,36 @@
 import React from 'react';
-import  Image  from './styled/styled';
 
-interface NFT {
-  id: number;
-  name: string;
-  image: string;
-  description: string;
-}
-
-const NFTCollection: React.FC = () => {
-  const nfts: NFT[] = [
-    {
-      id: 1,
-      name: 'NFT 1',
-      image: 'https://i.pinimg.com/originals/0e/02/25/0e0225da271d1600426fa946d2b2cf27.jpg',
-      description: 'This is NFT 1',
-    },
-    {
-      id: 2,
-      name: 'NFT 2',
-      image: 'https://art.kartinkof.club/uploads/posts/2023-07/1689110576_art-kartinkof-club-p-idei-dlya-srisovki-neiron-28.jpg',
-      description: 'This is NFT 2',
-    },
-    // Add more NFTs to the array
+const ImageGrid = () => {
+  const images = [
+    { id: 5983, src: 'https://art.kartinkof.club/uploads/posts/2023-07/1689110576_art-kartinkof-club-p-idei-dlya-srisovki-neiron-28.jpg' },
+    { id: 8620, src: 'https://art.kartinkof.club/uploads/posts/2023-07/1689110576_art-kartinkof-club-p-idei-dlya-srisovki-neiron-28.jpg' },
+    { id: 7169, src: 'https://art.kartinkof.club/uploads/posts/2023-07/1689110576_art-kartinkof-club-p-idei-dlya-srisovki-neiron-28.jpg' },
+    { id: 4974, src: 'https://art.kartinkof.club/uploads/posts/2023-07/1689110576_art-kartinkof-club-p-idei-dlya-srisovki-neiron-28.jpg' },
+    { id: 1069, src: 'https://art.kartinkof.club/uploads/posts/2023-07/1689110576_art-kartinkof-club-p-idei-dlya-srisovki-neiron-28.jpg' },
+    { id: 299, src: 'https://art.kartinkof.club/uploads/posts/2023-07/1689110576_art-kartinkof-club-p-idei-dlya-srisovki-neiron-28.jpg' },
+    { id: 2666, src: 'https://art.kartinkof.club/uploads/posts/2023-07/1689110576_art-kartinkof-club-p-idei-dlya-srisovki-neiron-28.jpg' },
+    { id: 5155, src: 'https://art.kartinkof.club/uploads/posts/2023-07/1689110576_art-kartinkof-club-p-idei-dlya-srisovki-neiron-28.jpg' },
+    { id: 9871, src: 'https://art.kartinkof.club/uploads/posts/2023-07/1689110576_art-kartinkof-club-p-idei-dlya-srisovki-neiron-28.jpg' },
+    { id: 7084, src: 'https://art.kartinkof.club/uploads/posts/2023-07/1689110576_art-kartinkof-club-p-idei-dlya-srisovki-neiron-28.jpg' },
   ];
 
   return (
-    <div>
-      <h2>NFT Collection</h2>
-      <ul>
-        {nfts.map((nft) => (
-          <li key={nft.id}>
-            <Image src={nft.image} alt={nft.name} />
-            <h3>{nft.name}</h3>
-            <p>{nft.description}</p>
-          </li>
-        ))}
-      </ul>
+    <div className="grid grid-cols-3 gap-4">
+      {images.map((image) => (
+        <div key={image.id} className="bg-gray-200 rounded-lg p-4">
+          <img
+            src={image.src}
+            alt={`Image ${image.id}`}
+            className="w-full h-auto rounded-lg"
+          />
+          <div className="mt-2 text-center">
+            <p>NO. {image.id}</p>
+            <button className="buy-button">Купить</button> {/* добавляем кнопку "Купить" */}
+          </div>
+        </div>
+      ))}
     </div>
   );
 };
 
-
-export default NFTCollection;
+export default ImageGrid;
