@@ -86,6 +86,7 @@ export const GlobalStyle = createGlobalStyle`
  .grid p {
     font-size: 16px;
     margin-bottom: 8px;
+     color: #000000;
   }
 
  .grid.font-bold {
@@ -128,14 +129,8 @@ export const GlobalStyle = createGlobalStyle`
     padding: 8px 16px; /* уменьшить padding кнопки */
     font-size: 14px; /* уменьшить размер шрифта кнопки */
   }
-    @media (prefers-color-scheme: dark) {
- .grid p {
-    color: #FFFFFF; /* белый текст */
-    color: var(--tg-theme-text-color); /* использовать цвет текста из темы Telegram */
-  }
-}
-  }
-`;
+    
+  }`;
 
 
 
