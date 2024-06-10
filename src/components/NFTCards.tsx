@@ -15,7 +15,7 @@ const ImageGrid = () => {
   ];
 
   return (
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    
     <div className="grid grid-cols-3 gap-4">
       {images.map((image) => (
         <div key={image.id} className="bg-gray-200 rounded-lg p-4">
@@ -31,7 +31,7 @@ const ImageGrid = () => {
         </div>
       ))}
     </div>
-    </meta>
+    
   );
 };
 
