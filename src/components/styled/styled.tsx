@@ -80,7 +80,7 @@ export const GlobalStyle = createGlobalStyle`
     align-items: center;
     background-color: #fff;
     border-radius: 10px;
-    padding: 16px;
+    padding: 16px; /* reduce padding to 8px on smaller screens */
   }
 
  .grid img {
@@ -89,11 +89,13 @@ export const GlobalStyle = createGlobalStyle`
     border-radius: 10px;
     max-width: 100%;
     object-fit: cover;
+    margin: 0; /* remove margin */
   }
 
  .grid p {
     font-size: 16px;
     margin-bottom: 8px;
+    color: #00000;
   }
 
  .grid.font-bold {
@@ -110,6 +112,7 @@ export const GlobalStyle = createGlobalStyle`
     padding: 10px 20px;
     font-size: 16px;
     cursor: pointer;
+    width: 100%; /* make button full-width */
   }
 
  .buy-button:hover {
@@ -119,9 +122,15 @@ export const GlobalStyle = createGlobalStyle`
   @media (max-width: 768px) {
    .grid {
       grid-template-columns: repeat(3, minmax(100px, 1fr));
-      gap: 15px;
+      gap: 10px; /* reduce gap */
     }
-      
+   .grid > div {
+      padding: 8px; /* reduce padding */
+    }
+   .buy-button {
+      padding: 8px 16px; /* reduce padding */
+      font-size: 14px; /* reduce font size */
+    }
   }
 `;
 
